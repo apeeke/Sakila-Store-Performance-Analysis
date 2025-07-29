@@ -32,15 +32,19 @@ LIMIT 10;
 # Category-level performance comparison between Store 1 and Store 2
 ```sql
 
-SELECT f.category, s.store_id, SUM(p.amount) AS revenue
+SELECT 
+    c.name AS category,
+    s.store_id,
+    SUM(p.amount) AS revenue
 FROM film_category fc
-JOIN category f ON f.category_id = fc.category_id
-JOIN film f2 ON f2.film_id = fc.film_id
-JOIN inventory i ON f2.film_id = i.film_id
+JOIN category c ON fc.category_id = c.category_id
+JOIN film f ON fc.film_id = f.film_id
+JOIN inventory i ON f.film_id = i.film_id
 JOIN store s ON i.store_id = s.store_id
 JOIN rental r ON i.inventory_id = r.inventory_id
 JOIN payment p ON r.rental_id = p.rental_id
-GROUP BY f.category, s.store_id;
+GROUP BY c.name, s.store_id
+ORDER BY c.name, s.store_id;
 
 ```
 
