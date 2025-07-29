@@ -95,6 +95,11 @@ FROM rental;
 
 ```
 
+# Store Performance Insights
+
+![Movie Rental Store Dashboard](insight_dashboard.png)
+
+
 # Insights & Business Alignment
 
 |  **Query Title**                                            |  **Insight**                                                              |  **How It Supports Objective**                                                                                                 |
