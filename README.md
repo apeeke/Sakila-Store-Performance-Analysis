@@ -15,7 +15,7 @@ This project simulates a consulting engagement with Sakila, a global movie renta
 
  # SQL Insights 
 
-# Inactive high-value customers at Store 2
+Inactive high-value customers at Store 2
 ```sql
 SELECT c.first_name, c.last_name, SUM(p.amount) AS total_spent, MAX(r.rental_date) AS last_rental
 FROM customer c
@@ -29,7 +29,7 @@ LIMIT 10;
 
 ```
 
-# Category-level performance comparison between Store 1 and Store 2
+Category-level performance comparison between Store 1 and Store 2
 ```sql
 
 SELECT 
